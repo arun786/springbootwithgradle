@@ -1,0 +1,29 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Arun
+    changes:
+    - createTable:
+        tableName: Product
+        columns:
+        - column:
+            name: id
+            type: int
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              nullable: false
+        - column:
+            name: name
+            type: varchar2(25)
+        - column:
+            name: company
+            type: varchar2(25)
+        - column:
+            name: price
+            type: int
+        - column:
+            name: instock
+            type: boolean
+
+

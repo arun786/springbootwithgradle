@@ -1,0 +1,10 @@
+server:
+  port: 6443
+spring:
+  datasource:
+    username: root
+    password: root
+    jdbc-url: jdbc:mysql://mysqldatabase:3306/tcrmd00
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    enabled: true

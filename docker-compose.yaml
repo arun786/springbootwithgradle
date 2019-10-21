@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+
+  product:
+    image: aruntcs2005/springliquibase
+    ports:
+      - 80:6443
+    networks:
+      - liquibase-network
+    depends_on:
+      - mysqldatabase
+
+  mysqldatabase:
+    image: mysql:8
+    volumes:
+      - mydata:/var/lib/mysql
+    networks:
+      - liquibase-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=tcrmd00
+
+networks:
+  liquibase-network:
+volumes:
+  mydata:
